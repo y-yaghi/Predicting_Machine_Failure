@@ -1,0 +1,8 @@
+Model,Description,Hyperparameters,Train Accuracy,Test Accuracy,CV Score
+Decision Tree (Baseline),Basic decision tree with default parameters.,default,1.0,0.9321419321419322,0.9191867935193743
+Decision Tree (Best),Tuned decision tree using GridSearchCV.,"{'max_depth': 8, 'min_samples_leaf': 2, 'min_samples_split': 3}",0.904811241339118,0.8935508935508936,0.8931554303503825
+Random Forest (Baseline),Basic random forest with default parameters.,default,1.0,0.9357679357679358,0.9343393195309447
+Random Forest (Best),Tuned random forest using GridSearchCV.,"{'max_depth': 8, 'min_samples_leaf': 2, 'min_samples_split': 8, 'n_estimators': 100}",0.9013792656867189,0.8951048951048951,0.8954870785018544
+XGBoost (Baseline),Baseline XGBoost classifier on GPU with early stopping.,default,0.9918409635433529,0.9797979797979798,N/A
+XGBoost (Best),Tuned XGBoost classifier using RandomizedSearchCV.,"{'subsample': 0.9, 'reg_lambda': 1.5, 'reg_alpha': 0.1, 'n_estimators': 150, 'max_depth': 8, 'learning_rate': 0.1, 'gamma': 0, 'colsample_bytree': 0.9}",0.9957262189988991,0.9803159803159803,0.9606075670480411
+Stacking Ensemble,"Stacking ensemble using best DT, best RF, and best XGBoost with Logistic Regression meta-estimator.","Components: DT best, RF best, XGB best; Final Estimator: LogisticRegression(max_iter=1000)",0.9879557080878067,0.965034965034965,N/A
